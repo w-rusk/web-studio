@@ -1,0 +1,325 @@
+:root {
+  --accent-color: rgba(33, 150, 243, 1);
+  --main-txt-color: rgba(33, 33, 33, 1);
+  --secondary-txt-color: rgba(117, 117, 117, 1);
+  --tertiary-txt-color: rgba(255, 255, 255, 1);
+  --quaternary-txt-color: rgba(255, 255, 255, 0.6);
+  --main-bg-color: rgba(255, 255, 255, 1);
+  --secondary-bg-color: rgba(245, 244, 250, 1);
+  --tertiary-bg-color: rgba(47, 48, 58, 1);
+  --img-bg-color: rgba(196, 196, 196, 1);
+  --main-icon-color: rgba(255, 255, 255, 1);
+  --border-color: rgba(238, 238, 238, 1);
+  --hero-gradient: rgba(47, 48, 58, 0.4);
+  --modal-gradient: rgba(0, 0, 0, 0.2);
+  --shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.12),
+    0px 4px 4px 0px rgba(0, 0, 0, 0.06), 1px 4px 6px 0px rgba(0, 0, 0, 0.16);
+
+  --transition-timing: 250ms;
+  --transition-delay: 0ms;
+  --transition-fn: ease-in-out;
+}
+
+/* Гладкое шрифтовое сглаживание */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Удобный базовый шрифт */
+body {
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  line-height: 1.5;
+  color: var(--main-txt-color);
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Ссылки без подчёркивания, но с hover */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition-timing) var(--transition-fn);
+}
+
+/* Убираем точки у списков */
+ul,
+ol {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+/* Картинки и видео не выходят за контейнер */
+img,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Кнопки без артефактов браузера */
+button {
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+/* Поля и инпуты */
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Таблицы без лишних отступов */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a:hover,
+a:focus {
+  color: var(--accent-color);
+}
+
+section,
+header,
+footer {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.container {
+  padding: 94px 215px;
+}
+
+.section-title {
+  margin-bottom: 50px;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.167;
+  letter-spacing: 0.03em;
+  text-align: center;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  width: 1600px;
+  background-color: var(--main-bg-color);
+  transform: translateX(-50%);
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 24px;
+  padding-bottom: 25px;
+}
+
+.logo-thumb {
+  margin-right: 93px;
+  width: 145px;
+  height: 31px;
+  color: var(--accent-color);
+}
+
+.logo {
+  display: inline-block;
+  width: 145px;
+  height: 31px;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+}
+
+.navigation-list,
+.contacts-list {
+  display: flex;
+}
+
+.navigation-list-item:not(:last-child),
+.contacts-list-item:not(:last-child) {
+  margin-right: 50px;
+}
+
+.hero {
+  margin-top: 80px;
+  height: 600px;
+  background-color: var(--tertiary-bg-color);
+}
+
+.hero .container {
+  padding: 200px 452px 280px;
+}
+
+.hero-title {
+  margin-bottom: 30px;
+  font-size: 44px;
+  font-weight: 900;
+  line-height: 1.363;
+  letter-spacing: 0.06em;
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--tertiary-txt-color);
+}
+
+.modal-btn-open {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;
+  height: 50px;
+  color: var(--tertiary-txt-color);
+  background-color: var(--accent-color);
+  border-radius: 4px;
+}
+
+.specifics .container {
+  padding-bottom: 0;
+}
+
+.specifics-card {
+  width: 270px;
+}
+
+.specifics-card-subtitle {
+  margin-bottom: 10px;
+}
+
+.specifics-list {
+  display: flex;
+  flex-wrap: wrap;
+  /* gap: 10px; */
+  justify-content: space-between;
+}
+
+.specifics-card-subtitle {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.143;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.specifics-card-text {
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.714;
+  letter-spacing: 0.03em;
+  color: var(--secondary-txt-color);
+}
+
+.uber-uns-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.team {
+  background-color: var(--secondary-bg-color);
+}
+
+.team-card {
+  padding-bottom: 30px;
+  width: 270px;
+  border-radius: 0px 0px 4px 4px;
+  background-color: var(--main-bg-color);
+  box-shadow: var(--shadow);
+}
+
+.team-card-title {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.188;
+  letter-spacing: 0.03em;
+  text-align: center;
+}
+
+.team-card-text {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.188;
+  letter-spacing: 0.03em;
+  text-align: center;
+  color: var(--secondary-txt-color);
+}
+
+.team-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer {
+  background-color: var(--tertiary-bg-color);
+}
+
+.footer .container {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.address {
+  margin-top: 20px;
+  margin-bottom: 9px;
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.714;
+  letter-spacing: 0.03em;
+  color: var(--tertiary-txt-color);
+}
+
+.footer .contacts-list {
+  flex-direction: column;
+}
+
+.footer .contacts-list-item {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.714;
+  letter-spacing: 0.03em;
+  text-align: left;
+  color: var(--quaternary-txt-color);
+}
+
+.footer .contacts-list-item:not(:last-child) {
+  margin-bottom: 9px;
+}
