@@ -94,8 +94,8 @@ table {
   border-spacing: 0;
 }
 
-a:hover,
-a:focus {
+.link:hover,
+.link:focus {
   color: var(--accent-color);
 }
 
@@ -311,7 +311,7 @@ footer {
   flex-direction: column;
 }
 
-.footer .contacts-list-item {
+.footer .link {
   font-size: 14px;
   font-weight: 400;
   line-height: 1.714;
